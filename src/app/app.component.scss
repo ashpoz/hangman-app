@@ -1,0 +1,12 @@
+
+#appContainer {
+  height: 100vh;
+  min-height: 400px;
+}
+
+#gameStart {
+  font-size: 3em;
+  &.active {
+    display: none;
+  }
+}

@@ -1,16 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { HangmanWordComponent } from './hangman-word/hangman-word.component';
+import { HangmanService } from './hangman.service';
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HangmanWordComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    HangmanService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

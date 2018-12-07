@@ -1,0 +1,41 @@
+ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  font-size: 1.5em;
+  li {
+    padding: 0 .5rem 0 .5rem;
+    margin: 0 .5rem 0 .5rem;
+    line-height: 1.5em;
+    position: relative;
+    &:after {
+      content: '';
+      opacity: 1;
+      visibility: visible;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid black;
+    }
+  }
+  span {
+    visibility: visible;
+    opacity: 0;
+    transition: opacity .5s ease-in;
+  }
+}
+
+.alphabet_container {
+  max-width: 550px;
+  @media (min-width: 768px) {
+    text-align: center;
+  }
+  .letterBtn {
+    font-size: 1.5em;
+    @media (min-width: 768px) {
+      font-size: 2.5em;
+    }
+  }
+}

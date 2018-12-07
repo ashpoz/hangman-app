@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h5 *ngIf="maxTries; else elseBlock" class="text-center">You have <span style="color: red;">{{maxTries ? maxTries : 'suh'}}</span> tries left</h5>
+      <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul>
+        <li *ngFor="let letter of currentWordLetters"><span class="hangman_letter">{{letter}}</span></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-center">
+    <div class="col alphabet_container">
+      <button *ngFor="let alphabet of alphabet"
+              class="uppercase btn btn-light letterBtn"
+              type="button"
+              (click)="selectLetter($event)">{{alphabet}}</button>
+              <!-- <button *ngFor="let alphabet of alphabet"
+              class="uppercase btn btn-light letterBtn"
+              type="button">{{alphabet}}</button> -->
+    </div>
+  </div>
+
+  <div class="row m-auto">
+      <button id="restartGame"
+      class="btn btn-outline-secondary m-auto"
+      routerLink="/" routerLinkActive="active">Restart</button>
+  </div>
+</div>
