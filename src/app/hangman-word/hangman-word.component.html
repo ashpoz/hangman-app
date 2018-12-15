@@ -1,6 +1,43 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <div class="hangman">
+          <div class="hangman_top-line">
+              <div class="hangman_noose">
+                <div class="hangman_body">
+                  <div class="hangman_body--head">
+                    <div class="eyes">
+                      <div class="eyes_left"></div>
+                      <div class="eyes_right"></div>
+                    </div>
+                    <div class="nose">
+                      <div class="inner"></div>
+                    </div>
+                    <div class="mouth"></div>
+                  </div>
+                  <div *ngIf="maxTries >= 2" class="hangman_body--torso">
+                    <div *ngIf="maxTries >= 6" class="arm_left"></div>
+                    <div *ngIf="maxTries >= 5" class="arm_right"></div>
+                  </div>
+                  <div class="hangman_body--legs">
+                      <div *ngIf="maxTries >= 4" class="legs_left"></div>
+                      <div *ngIf="maxTries >= 3" class="legs_right"></div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="hangman_triangle"></div>
+          <div class="hangman_post"></div>
+          <div class="hangman_base"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
       <h5 *ngIf="maxTries; else elseBlock" class="text-center">You have <span style="color: red;">{{maxTries ? maxTries : 'suh'}}</span> tries left</h5>
       <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>
     </div>
